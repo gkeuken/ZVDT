@@ -45,3 +45,12 @@ OpenVPN can be used if you want to assign private IP addresses to z/OS, then con
 https://ubuntu.com/server/docs/service-openvpn
 https://www.digitalocean.com/community/tutorials/how-to-set-up-and-configure-an-openvpn-server-on-ubuntu-20-04
 
+
+
+## Misc:
+- Watch out for overcomitting Linux memory (ie. too many z/OS Instances) as this may result in the Linux OOM-KILLER forceably terminating ALL z/OS Instance abruptly (see create_instance.sh script for sample way to check linux memory usage before starting an instance)
+- Ensure to turn off TCPIP Segmentation Offload settings for any adapter used by z/OS (see etcrclocal file ethtool commands for sample)
+- Watch out for Stratis filesystems if using < 1TB disk devices
+- It's best to have at least TWO physical network adapters in Linux for ZVDT, one for linux itself and the other for z/OS Instances. If you must use only 1 adapter it will work but watch out for ARP-FLUX.
+
+

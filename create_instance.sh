@@ -174,7 +174,7 @@ else
 fi
  
 mkdir /data/users/$inst_name/.hasplm
-echo 'serveraddr = zdt-lic-mgr.fyre.ibm.com' > /data/users/$inst_name/.hasplm/hasp_97252.ini
+echo 'serveraddr = your_license_server_address' > /data/users/$inst_name/.hasplm/hasp_97252.ini
 chown -R $inst_name:$inst_name /data/users/$inst_name/.hasplm
 
 sudo -i -u $inst_name bash << EOF

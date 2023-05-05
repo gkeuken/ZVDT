@@ -138,7 +138,7 @@ if [[ ! -z "$inst_ipaddr" ]]; then
 	  echo 'Failed to add new user '$inst_name
 	  exit
   fi
-  echo $inst_name":zdt4you!" | chpasswd
+  echo $inst_name":some_random_password!@#$%!" | chpasswd
 
   btrfs subvolume snapshot /data/$image /data/users/$inst_name/zos
   if [ $? -ne 0 ]; then

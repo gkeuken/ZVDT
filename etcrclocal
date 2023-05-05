@@ -1,0 +1,8 @@
+#!/bin/bash
+ethtool -K enc7200 tso off gro off gso off rx off tx off
+ethtool -K enc7206 tso off gro off gso off rx off tx off
+ethtool -K enc7240 tso off gro off gso off rx off tx off
+ethtool -K enc7243 tso off gro off gso off rx off tx off
+dnsmasq --conf-file=/dev/null --port=0 --dhcp-alternate-port=2067,2068 --dhcp-range=172.26.1.10,172.26.1.130,2147483648 --dhcp-leasefile=/var/lib/misc/dnsmasq.leases_priv
+dnsmasq --conf-file=/dev/null --port=0 --dhcp-alternate-port=3067,3068 --dhcp-range=9.114.209.140,9.114.209.145,2147483648 --dhcp-leasefile=/var/lib/misc/dnsmasq.leases_pub
+#echo 1 > /proc/sys/net/ipv4/conf/all/arp_ignore
